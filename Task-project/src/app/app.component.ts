@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Task-Project';
+  userName: String;
+  password: String;
+
+  Onlogin = () => {
+    if (this.userName !== '' && this.password !== '') {
+          this.OnClear();
+    }
+  }
+  OnClear = () => {
+    this.userName = '';
+    this.password = '';
+  }
+
 }
+
